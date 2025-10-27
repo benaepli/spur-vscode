@@ -1,0 +1,39 @@
+{
+  "name": "spur",
+  "displayName": "spur",
+  "description": "VSCode support for spur.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benaepli/spur-vscode.git"
+  },
+  "publisher": "baepli",
+  "contributes": {
+    "languages": [
+      {
+        "id": "spur",
+        "aliases": [
+          "spur",
+          "spur"
+        ],
+        "extensions": [
+          ".jenn"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "spur",
+        "scopeName": "source.spur",
+        "path": "./syntaxes/spur.tmLanguage.json"
+      }
+    ]
+  }
+}

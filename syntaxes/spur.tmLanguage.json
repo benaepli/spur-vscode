@@ -1,0 +1,202 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Spur",
+	"scopeName": "source.spur",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#declarations"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#function-calls"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#punctuation"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.spur",
+					"begin": "//",
+					"end": "$\n?",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.spur"
+						}
+					}
+				},
+				{
+					"name": "comment.block.spur",
+					"begin": "/\\*",
+					"end": "\\*/",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.spur"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.spur"
+						}
+					}
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.spur",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.spur",
+					"match": "\\\\."
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.spur",
+					"match": "\\b(if|elseif|else|for|in|return|break|await)\\b"
+				},
+				{
+					"name": "storage.type.spur",
+					"match": "\\b(func|let|map|list|role|ClientInterface|type)\\b"
+				},
+				{
+					"name": "storage.type.primitive.spur",
+					"match": "\\b(bool|string|int)\\b"
+				},
+				{
+					"name": "support.function.builtin.spur",
+					"match": "\\b(append|prepend|len|min|print|poll_for_resps|poll_for_any_resp|next_resp|rpc_async_call|rpc_call|exists|head|tail)\\b"
+				},
+				{
+					"name": "keyword.operator.spur",
+					"match": "->|\\?\\?|==|!=|<=|>=|\\b(and|or)\\b|[<>=!+\\-*/=%?!]"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.language.spur",
+					"match": "\\b(True|False|Nil)\\b"
+				},
+				{
+					"name": "constant.numeric.integer.spur",
+					"match": "\\b-?[0-9]+\\b"
+				}
+			]
+		},
+		"declarations": {
+			"patterns": [
+				{
+					"name": "meta.function.declaration.spur",
+					"match": "\\b(func)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "storage.type.function.spur"
+						},
+						"2": {
+							"name": "entity.name.function.spur"
+						}
+					}
+				},
+				{
+					"name": "meta.role.declaration.spur",
+					"match": "\\b(role)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "storage.type.spur"
+						},
+						"2": {
+							"name": "entity.name.type.class.spur"
+						}
+					}
+				},
+				{
+					"name": "meta.type.declaration.spur",
+					"match": "\\b(type)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+					"captures": {
+						"1": {
+							"name": "storage.type.spur"
+						},
+						"2": {
+							"name": "entity.name.type.spur"
+						}
+					}
+				},
+				{
+					"name": "meta.client.declaration.spur",
+					"match": "\\b(ClientInterface)\\b",
+					"captures": {
+						"1": {
+							"name": "storage.type.spur"
+						}
+					}
+				}
+			]
+		},
+		"function-calls": {
+			"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()",
+			"captures": {
+				"1": {
+					"name": "support.function.spur"
+				}
+			}
+		},
+		"variables": {
+			"name": "variable.other.language.spur",
+			"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"name": "punctuation.terminator.statement.spur",
+					"match": ";"
+				},
+				{
+					"name": "punctuation.separator.comma.spur",
+					"match": ","
+				},
+				{
+					"name": "punctuation.accessor.spur",
+					"match": ":"
+				},
+				{
+					"name": "punctuation.accessor.dot.spur",
+					"match": "\\."
+				},
+				{
+					"name": "punctuation.section.block.spur",
+					"match": "[{}]"
+				},
+				{
+					"name": "punctuation.section.group.spur",
+					"match": "[()]"
+				},
+				{
+					"name": "punctuation.section.list.spur",
+					"match": "[\\[\\]]"
+				}
+			]
+		}
+	}
+}
