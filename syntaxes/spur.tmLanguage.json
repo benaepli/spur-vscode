@@ -73,11 +73,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.spur",
-					"match": "\\b(if|elseif|else|for|in|return|break|await)\\b"
+					"match": "\\b(if|elseif|else|for|in|return|break|await|spin_await|sync|var)\\b"
 				},
 				{
 					"name": "storage.type.spur",
-					"match": "\\b(func|let|map|list|role|ClientInterface|type)\\b"
+					"match": "\\b(func|map|list|role|ClientInterface|type|promise|future|lock)\\b"
 				},
 				{
 					"name": "storage.type.primitive.spur",
@@ -85,11 +85,11 @@
 				},
 				{
 					"name": "support.function.builtin.spur",
-					"match": "\\b(append|prepend|len|min|print|poll_for_resps|poll_for_any_resp|next_resp|rpc_async_call|rpc_call|exists|head|tail)\\b"
+					"match": "\\b(append|prepend|len|min|print|poll_for_resps|poll_for_any_resp|next_resp|rpc_async_call|rpc_call|exists|head|tail|erase|create_promise|create_future|resolve_promise)\\b"
 				},
 				{
 					"name": "keyword.operator.spur",
-					"match": "->|\\?\\?|==|!=|<=|>=|\\b(and|or)\\b|[<>=!+\\-*/=%?!]"
+					"match": "->|\\?\\?|==|!=|<=|>=|\\b(and|or)\\b|[<>=!+\\-*/=%?!@]"
 				}
 			]
 		},
@@ -97,7 +97,7 @@
 			"patterns": [
 				{
 					"name": "constant.language.spur",
-					"match": "\\b(True|False|Nil)\\b"
+					"match": "\\b(true|false|nil)\\b"
 				},
 				{
 					"name": "constant.numeric.integer.spur",

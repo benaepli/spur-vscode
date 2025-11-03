@@ -1,8 +1,8 @@
 {
   "name": "spur",
-  "displayName": "spur",
-  "description": "VSCode support for spur.",
-  "version": "0.0.1",
+  "displayName": "Spur VSCode",
+  "description": "VSCode support for Spur.",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.100.0"
   },
@@ -23,7 +23,7 @@
           "spur"
         ],
         "extensions": [
-          ".jenn"
+          ".spur"
         ],
         "configuration": "./language-configuration.json"
       }
